@@ -12,8 +12,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><%= I18n.t("home") %><span class="sr-only">(current)</span></a></li>
-        <li>
+        <li class="<%= current_page?(websites_path) ? "active" : "" %>">
+          <%= link_to I18n.t("home"), websites_path %>
+        <li class="<%= current_page?(new_bookmark_path) ? "active" : "" %>">
           <%= link_to I18n.t("link.add_bookmark"), new_bookmark_path %>
         </li>
       </ul>
