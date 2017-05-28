@@ -6,7 +6,8 @@ class BookmarksServiceTest < ActiveSupport::TestCase
     url = "https://martinfowler.com/bliki/CQRS.html"
     short_url = "https://goo.gl/wfdVEb"
     title = "CQRS"
-    service = BookmarksService.new(title, url, short_url)
+    params = {:title => title, :url => url, :short_url => short_url}
+    service = BookmarksService.new(params)
     assert service.create
 
     assert_equal service.bookmark.url, url
@@ -23,7 +24,8 @@ class BookmarksServiceTest < ActiveSupport::TestCase
     website = Website.where(:url => "futurism.com")
     assert_not_nil website
     assert_equal website.count, 1
-    service = BookmarksService.new(title, url, short_url)
+    params = {:title => title, :url => url, :short_url => short_url}
+    service = BookmarksService.new(params)
     assert service.create
     assert_equal "futurism.com", service.bookmark.website.url
   end

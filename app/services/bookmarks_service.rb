@@ -1,9 +1,9 @@
 class BookmarksService
 
-  def initialize(title, url, short_url)
-    @title = title
-    @url = url
-    @short_url = short_url
+  def initialize(params)
+    @title = params[:title]
+    @url = params[:url]
+    @short_url = params[:short_url]
     @bookmark = nil
   end
 
@@ -23,7 +23,11 @@ class BookmarksService
 
     def extract_host(url)
       uri = URI.parse(url)
-      return uri.host.downcase
+      if uri.host
+        return uri.host.downcase
+      else
+        return nil
+      end
     end
 
 end
