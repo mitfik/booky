@@ -45,10 +45,12 @@ class BookmarksController < ApplicationController
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.json
   def destroy
-    website_id = @bookmark.website_id
+    website = @bookmark.website
+    redirect_url = websites_url
+    redirect_url = website_url(website.id) if website.bookmarks.count > 1
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to website_url(website_id), notice: 'Bookmark was successfully destroyed.' }
+      format.html { redirect_to redirect_url, notice: 'Bookmark was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
