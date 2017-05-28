@@ -1,4 +1,5 @@
 class Bookmark < ApplicationRecord
+  acts_as_taggable
   validates :title, :url, :website, presence: true
 
   belongs_to :website
