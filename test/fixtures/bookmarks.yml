@@ -4,8 +4,4 @@ futurism:
   title: futurism
   url: https://futurism.com/a-private-company-just-successfully-launched-their-rocket-into-space/
   short_url: goo.gl/KmmSIE
-
-two:
-  title: MyString
-  url: MyString
-  short_url: MyString
+  website: futurism

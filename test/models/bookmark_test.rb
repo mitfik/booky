@@ -7,9 +7,9 @@ class BookmarkTest < ActiveSupport::TestCase
    end
 
    test "Should create website if does not exist" do
-     bookmark = bookmarks(:futurism)
-     website = bookmark.website
+     website = bookmarks(:futurism).website
      assert_instance_of(Website, website)
    end
+
 
 end
