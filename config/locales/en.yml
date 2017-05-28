@@ -4,9 +4,27 @@ en:
   websites: Websites
   home: Home page
   sign_in: Sign in
-  website_delete_confirmation: "Are you sure to remove website and all %number% associated bookmarks?"
+  website_delete_confirmation: "Are you sure to remove website and all %{number} associated bookmarks?"
+  bookmark_delete_confirmation: "Are you sure to remove this bookmark?"
   show: Show
-  destroy: Destroy
+  actions: Actions
+  bookmark:
+    title: Title
+    url: Link
+    short_url: Short link
+  website:
+    list_of_bookmarks_html: "List of bookmarks within <span class='label label-default'>%{host}</span>"
+    url: Host
+    bookmarks_count: Bookmarks count
+  button:
+    create: Create
+    destroy: Remove
+  placeholder:
+    bookmark:
+      title: Type title
+      url: Url for your faviourite page
+      short_url: Short url for sharing
   link:
     add_bookmark: Add bookmark
+    show_bookmarks: Show bookmarks
 
