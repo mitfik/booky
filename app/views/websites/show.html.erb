@@ -1,0 +1,27 @@
+<h2>
+  <%= t("website.list_of_bookmarks_html", :host => @website.url) %>
+</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th> <%= I18n.t("bookmark.title")%> </th>
+      <th> <%= I18n.t("bookmark.url")%> </th>
+      <th> <%= I18n.t("bookmark.short_url")%> </th>
+      <th> <%= I18n.t("actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @website.bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.title %> </td>
+        <td><%= bookmark.url %> </td>
+        <td><%= bookmark.short_url %> </td>
+        <td>
+          <%= link_to t("edit"), edit_bookmark_path(bookmark), class: "btn btn-primary" %>
+          <%= link_to t("destroy"), bookmark, method: :delete, class: "btn btn-danger", data: { confirm: I18n.t("bookmark_delete_confirmation") } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
