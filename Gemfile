@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem "select2-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
