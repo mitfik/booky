@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= I18n.t("websites") %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @websites.each do |website| %>
+      <tr>
+        <td><%= link_to t("show"), website %></td>
+        <td><%= link_to t("destroy"), website, method: :delete, data: { confirm: I18n.t("website_delete_confirmation", website.bookmarks.count) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
