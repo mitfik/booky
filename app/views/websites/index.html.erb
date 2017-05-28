@@ -14,7 +14,7 @@
   <tbody>
     <% @websites.each do |website| %>
       <tr>
-        <td><%= website.url %> </td>
+        <td><%= link_to website.url, website.url %> </td>
         <td><%= website.bookmarks.count %> </td>
         <td>
           <%= link_to t("link.show_bookmarks"), website, :class => "btn btn-primary" %>

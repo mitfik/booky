@@ -15,8 +15,8 @@
     <% @website.bookmarks.each do |bookmark| %>
       <tr>
         <td><%= bookmark.title %> </td>
-        <td><%= bookmark.url %> </td>
-        <td><%= bookmark.short_url %> </td>
+        <td><%= link_to bookmark.url, bookmark.url %> </td>
+        <td><%= link_to bookmark.short_url, bookmark.short_url %> </td>
         <td>
           <%= link_to t("edit"), edit_bookmark_path(bookmark), class: "btn btn-primary" %>
           <%= link_to t("destroy"), bookmark, method: :delete, class: "btn btn-danger", data: { confirm: I18n.t("bookmark_delete_confirmation") } %>
